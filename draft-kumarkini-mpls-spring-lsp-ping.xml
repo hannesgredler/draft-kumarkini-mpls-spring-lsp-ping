@@ -11,7 +11,7 @@
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
 
-<rfc category='std' ipr='trust200902' docName='draft-kumarkini-mpls-spring-lsp-ping-00'>
+<rfc category='std' ipr='trust200902' docName='draft-kumarkini-mpls-spring-lsp-ping-01'>
 
 <front>
 <title abbrev="LSP Ping/Trace for SR on MPLS">Label Switched Path (LSP) Ping/Trace for Segment Routing Networks Using MPLS Dataplane</title>
@@ -74,16 +74,18 @@
 	<email>sriganesh.kini@ericsson.com</email>
 	</address>
 </author>
-<author initials="H." surname="Gredler" fullname="Hannes Gredler">
-	<organization>Juniper Networks</organization>
-	<address>
-		<postal>
-		<street></street>
-		<city></city> <region></region> <code></code>
-		<country></country>
-		</postal>
-	<email>hannes@juniper.net</email>
-	</address>
+<author fullname="Hannes Gredler" initials="H." surname="Gredler">
+      <organization>Juniper Networks, Inc.</organization>
+      <address>
+        <postal>
+          <street>1194 N. Mathilda Ave.</street>
+          <city>Sunnyvale</city>
+          <code>94089</code>
+          <region>CA</region>
+          <country>US</country>
+        </postal>
+        <email>hannes@juniper.net</email>
+      </address>
 </author>
 <author fullname="Mach(Guoyi) Chen" initials="M." surname="Chen">
       <organization>Huawei</organization>
@@ -105,7 +107,7 @@
       </address>
     </author>
     
-<date day="02" month="Jan" year="2014" />
+<date day="22" month="Jan" year="2014" />
 <area>Internet</area>
 <workgroup>Network Work group</workgroup>
 
@@ -230,17 +232,27 @@ to be forwarded over Link L2.
    When operated with the procedures defined in <xref target="RFC4379" />, this allows LSP
    ping/traceroute operations to function when Target FEC Stack TLV
    contains more FECs than received label stack at responder nodes.</t>
-<figure>
-											<artwork><![CDATA[
-			 	Type  Sub-Type    Value Field
-				----  --------  ---------------
-					1	TBD1      IPv4 Prefix Node Segment ID
-						TBD2      IPv6 Prefix Node Segment ID
-						TBD3      Adjacency Segment ID
-	
-											]]></artwork>
-										</figure>
-		<t>Service Segments and FRR will be considered in future version.</t>
+
+      <texttable anchor="SR_SUBTLV_TABLE" title="SR subTLVs">
+	<ttcol align="left">Type</ttcol>
+	<ttcol align="left">Sub-Type</ttcol>
+	<ttcol align="left">Value Field</ttcol>
+
+	<c>1</c>
+	<c>TBD1</c>
+	<c>IPv4 Prefix Node Segment ID</c>
+
+	<c></c>
+	<c>TBD2</c>
+	<c>IPv6 Prefix Node Segment ID</c>
+
+	<c></c>
+	<c>TBD3</c>
+	<c>Adjacency Segment ID</c>
+      </texttable>
+      
+      <t>Service Segments and FRR will be considered in future version.</t>
+
 	<section title="IPv4 Prefix Node Segment ID">
 	<t>The format is as below:</t>
 	<figure>
